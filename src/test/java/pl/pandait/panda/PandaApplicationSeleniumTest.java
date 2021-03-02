@@ -27,7 +27,7 @@ public class PandaApplicationSeleniumTest {
     private int port;
 
     @BeforeEach
-    public void startup() throws InterruptedException,MalformedURLException {
+    public void startup() throws InterruptedException, MalformedURLException {
 
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setPlatform(Platform.LINUX);
