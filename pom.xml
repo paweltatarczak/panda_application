@@ -125,8 +125,12 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>docker</id>
+      <properties>
+        <maven.test.skip>false</maven.test.skip>
+      </properties>
       <build>
         <plugins>
           <plugin>
@@ -148,12 +152,12 @@
               <buildArgs>
                 <JAR_FILE>target/${project.artifactId}-${project.version}.jar</JAR_FILE>
               </buildArgs>
-              <skipTests>true</skipTests>
             </configuration>
           </plugin>
         </plugins>
       </build>
     </profile>    
+
     <profile>
       <id>dev</id>
       <activation>
