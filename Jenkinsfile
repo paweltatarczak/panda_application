@@ -1,6 +1,6 @@
 pipeline {
     agent {
-      label 'slave'
+        label 'slave'
     }
 
     tools {
@@ -34,7 +34,8 @@ pipeline {
 
         stage('Docker image create') {
             steps {
-                sh "mvn package -Pdocker -Dmaven.test.skip=true"
+                //sh "mvn package -Pdocker -Dmaven.test.skip=true"
+                sh "mvn package -Pdocker"
             }
         }
 
