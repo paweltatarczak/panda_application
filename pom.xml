@@ -129,7 +129,7 @@
     <profile>
       <id>docker</id>
       <properties>
-        <maven.test.skip>false</maven.test.skip>
+        <maven.test.skip>true</maven.test.skip>
       </properties>
       <build>
         <plugins>
