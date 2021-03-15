@@ -22,7 +22,7 @@ pipeline {
         
         stage('GetCode') {
             steps {
-		        checkout scm
+                checkout scm
             }
         }
         
@@ -34,8 +34,8 @@ pipeline {
 
         stage('Docker image create') {
             steps {
-                //sh "mvn package -Pdocker -Dmaven.test.skip=true"
-                sh "mvn package -Pdocker"
+                sh "mvn package -Pdocker -Dmaven.test.skip=true"
+                //sh "mvn package -Pdockere"
             }
         }
 
