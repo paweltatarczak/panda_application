@@ -59,18 +59,7 @@ pipeline {
                 }
             }
         } 
-    }
-    
-    post {
-        always {
-            sh "docker stop pandaapp"
-            junit '**/target/surefire-reports/TEST-*.xml'
-            //archiveArtifacts 'target/*.jar'
-            deleteDir()
-        }
-    }
 
-    stages {
         stage('Run terraform') {
             steps {
                 dir('infrastructure/terraform') { 
@@ -91,7 +80,16 @@ pipeline {
                 }
             }
         }
-    }
 
+    }
+    
+    post {
+        always {
+            sh "docker stop pandaapp"
+            junit '**/target/surefire-reports/TEST-*.xml'
+            //archiveArtifacts 'target/*.jar'
+            deleteDir()
+        }
+    }
 }
 
