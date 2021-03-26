@@ -5,11 +5,13 @@ pipeline {
 
     tools {
         maven "mvn3"
+        terraform "Terraform"
     }
-    
+
     environment {
         IMAGE = readMavenPom().getArtifactId()
         VERSION = readMavenPom().getVersion()
+        ANSIBLE = tool name: 'Ansible', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
     }
 
     stages {
